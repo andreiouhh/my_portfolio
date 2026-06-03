@@ -1,0 +1,129 @@
+:root {
+  --text: #5c6478;
+  --text-h: #121826;
+  --bg: #f4f6fb;
+  --bg-elevated: #ffffff;
+  --border: #dde3ef;
+  --border-strong: #c5cfe0;
+  --accent: #1d6fd4;
+  --accent-dark: #1558a8;
+  --accent-soft: rgba(29, 111, 212, 0.1);
+  --accent-glow: rgba(29, 111, 212, 0.22);
+  --surface: #ffffff;
+  --surface-muted: #eef2f8;
+  --hero-gradient: radial-gradient(
+      circle at 80% 20%,
+      rgba(29, 111, 212, 0.12),
+      transparent 42%
+    ),
+    radial-gradient(
+      circle at 10% 80%,
+      rgba(99, 179, 237, 0.14),
+      transparent 40%
+    );
+  --shadow-sm: 0 4px 16px rgba(18, 24, 38, 0.06);
+  --shadow-md: 0 16px 40px rgba(18, 24, 38, 0.1);
+  --shadow-lg: 0 24px 60px rgba(18, 24, 38, 0.14);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --max-width: 1160px;
+  --header-height: 72px;
+
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  --mono: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  font: 17px/1.6 var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #a3adc2;
+    --text-h: #f3f6fc;
+    --bg: #0b0f17;
+    --bg-elevated: #121826;
+    --border: #243047;
+    --border-strong: #33415c;
+    --accent: #5ba3ff;
+    --accent-dark: #8bc0ff;
+    --accent-soft: rgba(91, 163, 255, 0.14);
+    --accent-glow: rgba(91, 163, 255, 0.28);
+    --surface: #151b28;
+    --surface-muted: #1a2233;
+    --hero-gradient: radial-gradient(
+        circle at 80% 20%,
+        rgba(91, 163, 255, 0.16),
+        transparent 42%
+      ),
+      radial-gradient(
+        circle at 10% 80%,
+        rgba(45, 212, 191, 0.08),
+        transparent 40%
+      );
+    --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.25);
+    --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.35);
+    --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--text-h);
+  margin: 0;
+}
+
+h2 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text-h);
+}
