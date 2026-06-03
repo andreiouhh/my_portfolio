@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { projects } from '../data/portfolioData'
+import ProjectCarousel from './ProjectCarousel'
 import ProjectModal from './ProjectModal'
 
 function ProjectCard({ project, index, onSelect }) {
   return (
     <article className="project-card">
+      <ProjectCarousel media={project.media} variant="card" />
       <div className="project-card-top">
         <span className="project-index">{String(index + 1).padStart(2, '0')}</span>
         {project.subtitle && (

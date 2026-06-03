@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import ProjectCarousel from './ProjectCarousel'
 
 export default function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -35,6 +36,8 @@ export default function ProjectModal({ project, onClose }) {
         <button type="button" className="modal-close" onClick={onClose} aria-label="Close">
           ×
         </button>
+
+        <ProjectCarousel media={project.media} variant="modal" />
 
         <h2 id="modal-title">{project.title}</h2>
         {project.subtitle && (

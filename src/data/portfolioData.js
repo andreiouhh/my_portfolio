@@ -1,3 +1,13 @@
+import dairyboxLanding from '../assets/dairybox/Landing.jpeg'
+import dairyboxProducts from '../assets/dairybox/Products.jpeg'
+import dairyboxForecasting from '../assets/dairybox/Forecasting.jpeg'
+import dairyboxReports from '../assets/dairybox/Reports.jpeg'
+import dairyboxReporting2 from '../assets/dairybox/Reporting 2.jpeg'
+import dairyboxDashboardVideo from '../assets/dairybox/dairybox-dashboard.mp4'
+import hrPage1 from '../assets/hr_dashboard/page 1.png'
+import hrPage2 from '../assets/hr_dashboard/page 2.png'
+import esgDashboard from '../assets/esg_&_financial/dashboard.png'
+
 export const profile = {
   name: 'Andrei Reyes',
   location: 'Lipa City, Batangas',
@@ -21,6 +31,18 @@ export const projects = [
     tech: ['React', 'Flask', 'Python', 'SQL', 'RBAC', 'Machine Learning'],
     liveUrl: null,
     githubUrl: null,
+    media: [
+      { type: 'image', src: dairyboxLanding, alt: 'DairyBox landing page' },
+      { type: 'image', src: dairyboxProducts, alt: 'DairyBox products catalog' },
+      { type: 'image', src: dairyboxForecasting, alt: 'DairyBox demand forecasting view' },
+      { type: 'image', src: dairyboxReports, alt: 'DairyBox reports dashboard' },
+      { type: 'image', src: dairyboxReporting2, alt: 'DairyBox reporting analytics' },
+      {
+        type: 'video',
+        src: dairyboxDashboardVideo,
+        alt: 'DairyBox platform walkthrough',
+      },
+    ],
     caseStudy: {
       situation:
         'A local dairy cooperative relied on manual order tracking and spreadsheets, limiting direct sales channels and making inventory planning reactive rather than data-driven.',
@@ -41,6 +63,10 @@ export const projects = [
     tech: ['SQL', 'Power BI', 'Star Schema', 'ETL'],
     liveUrl: null,
     githubUrl: null,
+    media: [
+      { type: 'image', src: hrPage1, alt: 'HR dashboard overview' },
+      { type: 'image', src: hrPage2, alt: 'HR dashboard workforce metrics' },
+    ],
     caseStudy: {
       situation:
         'HR leadership lacked a unified view of workforce performance, hiring trends, and attrition drivers across relational data spread across multiple tables.',
@@ -61,6 +87,13 @@ export const projects = [
     tech: ['SQL', 'Tableau', 'Data Modeling'],
     liveUrl: null,
     githubUrl: null,
+    media: [
+      {
+        type: 'image',
+        src: esgDashboard,
+        alt: 'ESG and financial performance dashboard',
+      },
+    ],
     caseStudy: {
       situation:
         'Stakeholders needed to understand whether sustainability initiatives correlate with long-term financial performance, but raw company data contained nulls and inconsistent ESG classifications.',
