@@ -86,7 +86,7 @@ export default function ProjectCarousel({
       <div className="project-carousel__viewport">
         <div
           className="project-carousel__track"
-          style={{ transform: `translateX(-${index * 100}%)` }}
+          style={{ transform: `translateX(-${(index * 100) / count}%)` }}
         >
           {media.map((slide, slideIndex) => (
             <div
