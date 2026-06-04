@@ -9,13 +9,20 @@ export default function ProjectCarousel({
 }) {
   const [index, setIndex] = useState(0)
   const [paused, setPaused] = useState(false)
+  const [slideWidth, setSlideWidth] = useState(0)
   const videoRefs = useRef([])
   const containerRef = useRef(null)
+  const viewportRef = useRef(null)
 
   const count = media?.length ?? 0
   const hasMultiple = count > 1
   const current = media?.[index]
   const isVideoSlide = current?.type === 'video'
+
+  const slideStyle =
+    slideWidth > 0
+      ? { flex: `0 0 ${slideWidth}px`, width: slideWidth, minWidth: slideWidth }
+      : undefined
 
   const goTo = useCallback(
     (nextIndex) => {
@@ -27,6 +34,20 @@ export default function ProjectCarousel({
 
   const goPrev = useCallback(() => goTo(index - 1), [goTo, index])
   const goNext = useCallback(() => goTo(index + 1), [goTo, index])
+
+  useEffect(() => {
+    const viewport = viewportRef.current
+    if (!viewport) return undefined
+
+    const updateWidth = () => {
+      setSlideWidth(viewport.clientWidth)
+    }
+
+    updateWidth()
+    const observer = new ResizeObserver(updateWidth)
+    observer.observe(viewport)
+    return () => observer.disconnect()
+  }, [])
 
   useEffect(() => {
     videoRefs.current.forEach((video, i) => {
@@ -83,15 +104,18 @@ export default function ProjectCarousel({
       onFocus={() => setPaused(true)}
       onBlur={() => setPaused(false)}
     >
-      <div className="project-carousel__viewport">
+      <div ref={viewportRef} className="project-carousel__viewport">
         <div
           className="project-carousel__track"
-          style={{ transform: `translateX(-${(index * 100) / count}%)` }}
+          style={{
+            transform: slideWidth ? `translateX(-${index * slideWidth}px)` : undefined,
+          }}
         >
           {media.map((slide, slideIndex) => (
             <div
               key={slide.src}
               className="project-carousel__slide"
+              style={slideStyle}
               aria-hidden={slideIndex !== index}
             >
               {slide.type === 'video' ? (
