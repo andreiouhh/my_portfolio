@@ -18,7 +18,7 @@ export const profile = {
   toolsLine: 'Powered by Python, SQL, Power BI, Flask, and React.',
   github: 'https://github.com/andreiouhh',
   linkedin: 'https://www.linkedin.com/in/randreil',
-  resumeUrl: '/Reyes, Andrei - Resume.pdf',
+  resumeUrl: '/Resume_Reyes, A.pdf',
 }
 
 export const projects = [
